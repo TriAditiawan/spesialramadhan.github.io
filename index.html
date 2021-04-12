@@ -19,8 +19,8 @@
       tombol.addEventListener("click", function () {
         const swalWithBootstrapButtons = Swal.mixin({
           customClass: {
-            confirmButton: "btn btn-success mx-2 mt-2",
-            cancelButton: "btn btn-danger mt-2",
+            confirmButton: "btn btn-success mx-2",
+            cancelButton: "btn btn-danger",
           },
           buttonsStyling: false,
         });
@@ -42,7 +42,15 @@
               /* Read more about handling dismissals below */
               result.dismiss === Swal.DismissReason.cancel
             ) {
-              swalWithBootstrapButtons.fire("jahat banget lu", "yaudah kalo ga mau mah ga maksa", "error");
+              swalWithBootstrapButtons.fire({
+                title: "jahat banget lu",
+                text: "pokonya gue ga mau tau lu harusmaafin gue sekarang juga. ",
+                icon: "error",
+                showCancelButton: true,
+                confirmButtonText: "iya, dimaafin deh",
+                cancelButtonText: "tetep ga mau",
+                reverseButtons: true,
+              });
             }
           });
       });
